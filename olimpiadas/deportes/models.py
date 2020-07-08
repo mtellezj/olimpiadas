@@ -16,6 +16,12 @@ class Estado(models.Model):
     nombre = models.CharField(max_length=32, unique=True)
     abreviado = models.CharField(max_length=4)
 
+    class Meta:
+        ordering = ('nombre', )
+
+    def __str__(self):
+        return f'{self.nombre}, {self.abreviado}'
+
 
 class Escuela(models.Model):
     nombre = models.CharField(max_length=128, unique=True)
