@@ -1,3 +1,7 @@
 from django.contrib import admin
+from deportes.models import Estado
 
-# Register your models here.
+
+@admin.register(Estado)
+class EstadoAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'abreviado')
